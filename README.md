@@ -29,21 +29,27 @@ $ make exec
 $ docker start oekaki-dengon-game
 ```
 
+コンテナにログインする。
+
+```shell
+$ docker exec -it oekaki-dengon-game bash
+```
+
 コンテナ内にログインした後にPhoenixをビルドする。
 
-```
+```shell
 $ make build
 ```
 
 以下のコマンドでサーバーを起動する。
 
-```
+```shell
 $ iex -S mix phoenix.server
 ```
 
 起動後はホスト環境に戻り、 `oekaki-dengon-game-misc` をgit cloneしたディレクトリに移動して、以下のコマンドでコンテナのIPアドレスを確認する。
 
-```
+```shell
 $ make ip
 ```
 
