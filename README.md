@@ -4,10 +4,47 @@
 
 # Docker
 
-Dockerを使って開発を行う
+Dockerを使って開発を行う。手順を以下に示す。
+
+まずはアプリケーション本体をgit cloneする。
+
+```
+$ cd {local_working_dir}
+$ git clone git@github.com:proshunsuke/oekaki-dengon-game.git
+```
+
+次にDockerfileからイメージを作成する。
 
 ```shell
+$ cd {any_dir}
+$ git clone git@github.com:proshunsuke/oekaki-dengon-game-misc.git
 $ make build
-$ docker run -d -p 80:4000 --name oekaki_dengon_game -v {local_working_dir}/oekaki_dengon_game:/usr/local/src/oekaki_dengon_game -t pro/oekaki-dengon-game
+$ docker run -d -p 80:4000 --name oekaki-dengon-game -v {local_working_dir}/oekaki-dengon-game:/usr/local/src/oekaki-dengon-game -t pro/oekaki-dengon-game
 $ make exec
 ```
+
+一度 `docker run` を行ったらコンテナが作成された状態になる。次回からは以下のコマンドでコンテナを起動出来る。
+
+```shell
+$ docker start oekaki-dengon-game
+```
+
+コンテナ内にログインした後にPhoenixをビルドする。
+
+```
+$ make build
+```
+
+以下のコマンドでサーバーを起動する。
+
+```
+$ iex -S mix phoenix.server
+```
+
+起動後はホスト環境に戻り、 `oekaki-dengon-game-misc` をgit cloneしたディレクトリに移動して、以下のコマンドでコンテナのIPアドレスを確認する。
+
+```
+$ make ip
+```
+
+出力されたipアドレスをポート4000を指定してブラウザを起動するとアプリケーションが動いているこごが確認出来る（`IP_ADDRESS:4000`）。
