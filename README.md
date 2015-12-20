@@ -8,14 +8,14 @@ Dockerを使って開発を行う。手順を以下に示す。
 
 まずはアプリケーション本体をgit cloneする。
 
-```
+```sh
 $ cd {local_working_dir}
 $ git clone git@github.com:proshunsuke/oekaki-dengon-game.git
 ```
 
 次にDockerfileからイメージを作成する。
 
-```shell
+```sh
 $ cd {any_dir}
 $ git clone git@github.com:proshunsuke/oekaki-dengon-game-misc.git
 $ make build
@@ -25,31 +25,31 @@ $ make exec
 
 一度 `docker run` を行ったらコンテナが作成された状態になる。次回からは以下のコマンドでコンテナを起動出来る。
 
-```shell
+```sh
 $ docker start oekaki-dengon-game
 ```
 
 コンテナにログインする。
 
-```shell
+```sh
 $ docker exec -it oekaki-dengon-game bash
 ```
 
 コンテナ内にログインした後にPhoenixをビルドする。
 
-```shell
+```sh
 $ make build
 ```
 
 以下のコマンドでサーバーを起動する。
 
-```shell
+```sh
 $ iex -S mix phoenix.server
 ```
 
 起動後はホスト環境に戻り、 `oekaki-dengon-game-misc` をgit cloneしたディレクトリに移動して、以下のコマンドでコンテナのIPアドレスを確認する。
 
-```shell
+```sh
 $ make ip
 ```
 
