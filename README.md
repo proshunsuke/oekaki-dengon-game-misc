@@ -1,9 +1,13 @@
-# oekaki-dengon-game-misc
+# ã“ã‚Œãªã«
 
-## ¥á¥â
+ãŠçµµã‹ãä¼è¨€ã‚²ãƒ¼ãƒ ã‚’é–‹ç™ºã™ã‚‹ãŸã‚ã®ã„ã‚ã„ã‚ãªã‚‚ã®ãŒå…¥ã£ã¦ã„ã‚‹ã‚‚ã®
 
-- docker run -d -p 80:4000 --name phoenix -v ~/RubyMineProjects/phoenix/oekaki_dengon_game:/usr/local/src/oekaki_dengon_game:ro -t xtity/docker-centos7-elixir-phoenix
- - `-v` ¤Ç¥Û¥¹¥ÈÂ¦¤È¥²¥¹¥ÈÂ¦¤Î¥Ç¥£¥ì¥¯¥È¥ê¤òÆ±´ü½ĞÍè¤ë
- - `-v` ¤¬ `-t` ¤è¤ê¤â¸å¤ËÍè¤ë¤È½ĞÍè¤Ê¤«¤Ã¤¿
-- docker exec -it phoenix bash
+# Docker
 
+Dockerã‚’ä½¿ã£ã¦é–‹ç™ºã‚’è¡Œã†
+
+```shell
+$ make build
+$ docker run -d -p 80:4000 --name oekaki_dengon_game -v {local_working_dir}/oekaki_dengon_game:/usr/local/src/oekaki_dengon_game -t pro/oekaki-dengon-game
+$ make exec
+```
