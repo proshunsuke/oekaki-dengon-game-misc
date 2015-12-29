@@ -19,7 +19,8 @@ $ git clone git@github.com:proshunsuke/oekaki-dengon-game.git
 $ cd {any_dir}
 $ git clone git@github.com:proshunsuke/oekaki-dengon-game-misc.git
 $ make build
-$ docker run -d -p 80:4000 --name oekaki-dengon-game -v {local_working_dir}/oekaki-dengon-game:/usr/local/src/oekaki-dengon-game -t pro/oekaki-dengon-game
+$ docker run -d --name postgres -e LC_ALL=C.UTF-8 postgres:9.3.5
+$ docker run -d -p 80:4000 --name oekaki-dengon-game -v {local_working_dir}/oekaki-dengon-game:/usr/local/src/oekaki-dengon-game --link postgres:db -t pro/oekaki-dengon-game
 ```
 
 一度 `docker run` を行ったらコンテナが作成された状態になる。次回からは以下のコマンドでコンテナを起動出来る。
@@ -32,6 +33,12 @@ $ docker start oekaki-dengon-game
 
 ```sh
 $ docker exec -it oekaki-dengon-game bash
+```
+
+DBへの接続が出来るか確認する。
+
+```sh
+$ psql -h db -U postgres
 ```
 
 コンテナ内にログインした後にPhoenixをビルドする。
