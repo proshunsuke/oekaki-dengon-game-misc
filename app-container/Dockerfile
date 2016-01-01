@@ -16,7 +16,7 @@ WORKDIR /usr/local/src/oekaki-dengon-game
 ########## install packages ##########
 RUN curl -L git.io/nodebrew | perl - setup
 RUN echo "export PATH=\$HOME/.nodebrew/current/bin:\$PATH" >> ~/.bashrc
-RUN source ~/.bashrc
 RUN export NODEBREW_ROOT=$HOME/.nodebrew
 RUN $HOME/.nodebrew/current/bin/nodebrew install-binary v5.2.0
+RUN source ~/.bashrc
 RUN npm install bower -g
