@@ -60,4 +60,4 @@ $ cd {local_working_dir}
 $ npm run start-dev-server
 ```
 
-http://localhost にアクセスすると見れる。
+[http://localhost](http://localhost) にアクセスすると見れる。
