@@ -53,10 +53,11 @@ $ make build
 $ iex -S mix phoenix.server
 ```
 
-起動後はホスト環境に戻り、 `oekaki-dengon-game-misc` をgit cloneしたディレクトリに移動して、以下のコマンドでコンテナのIPアドレスを確認する。
+*ローカルで* 以下のコマンドでwebpackを起動する。
 
 ```sh
-$ make ip
+$ cd {local_working_dir}
+$ npm run start-dev-server
 ```
 
-出力されたipアドレスをポート4000を指定してブラウザを起動するとアプリケーションが動いていることが確認出来る（ `IP_ADDRESS:4000` ）。
+http://localhost にアクセスすると見れる。
