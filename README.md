@@ -35,10 +35,11 @@ $ docker start oekaki-dengon-game
 $ docker exec -it oekaki-dengon-game bash
 ```
 
-DBへの接続が出来るか確認する。
+DBへ接続してDBを作成する
 
 ```sh
 $ psql -h db -U postgres -d oekaki_dengon_game_repo
+$ create database oekaki_dengon_game_repo;
 ```
 
 コンテナ内にログインした後にPhoenixをビルドする。
