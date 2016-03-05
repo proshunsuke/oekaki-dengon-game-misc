@@ -38,7 +38,7 @@ $ docker exec -it oekaki-dengon-game bash
 DBへ接続してDBを作成する
 
 ```sh
-$ psql -h db -U postgres -d oekaki_dengon_game_repo
+$ psql -h db -U postgres
 $ create database oekaki_dengon_game_repo;
 ```
 
