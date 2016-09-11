@@ -2709,3 +2709,15 @@ All dependencies up to date
 
        https://peaceful-lowlands-4621.herokuapp.com/ deployed to Heroku
 ```
+
+### postinstallやめた時のログ
+
+```
+       Installing and caching bower components
+
+/app/tmp/buildpacks/0cb400b6e2b47797af689c47436e381482013688161c9e9a3608a44daa8bea5389ae50753ff544767fb71da0cc863f709b62b58f2b5c4952abe067db87e197f4/lib/build.sh: line 106: bower: command not found
+
+ !     Push rejected, failed to compile Phoenix app.
+
+ !     Push failed
+```
