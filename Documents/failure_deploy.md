@@ -303,3 +303,9 @@ All dependencies up to date
 
  !     Push failed
 ```
+
+### 参考にしたURL
+
+postinstall webpack not working on Heroku
+http://stackoverflow.com/questions/35375270/postinstall-webpack-not-working-on-heroku
+
